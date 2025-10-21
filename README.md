@@ -28,30 +28,38 @@ It includes a clean modular design with dataset management, model training (incl
 
 ## 🧩 Project Structure
 
-ScratchNet/
-│
-├── train.py # Main training script (CLI)
-├── predict.py # Prediction script (CLI)
-├── README.md # Project documentation
-├── requirements.txt # Dependencies
-│
-├── custom_datasets/ # Custom CSV datasets and generators
-│ ├── flowers.csv
-│ ├── flowers_generate.py
-│ ├── houses.csv
-│ └── houses_generate.py
-│
-├── models/ # Saved models, scalers, and metadata
-│
-└── scratchnet/ # Core implementation
-├── init.py
-├── datasets.py # Dataset loaders and preprocessing
-├── layers.py # Core layer definitions (Dense, etc.)
-├── losses.py # Loss functions (CrossEntropy, MSE)
-├── model.py # MLP architecture
-├── optimizers.py # Optimizers (SGD, Adam)
-├── trainer.py # Training logic + early stopping
-└── utils.py # Utilities (one-hot encoding, accuracy)
+- **`train.py`**  
+  Main training script (CLI).
+
+- **`predict.py`**  
+  Prediction script (CLI).
+
+- **`README.md`**  
+  Project documentation.
+
+- **`requirements.txt`**  
+  List of Python dependencies.
+
+- **`custom_datasets/`**  
+  Contains custom CSV datasets and their generation scripts.  
+  - `flowers.csv` → sample dataset of flower features.  
+  - `flowers_generate.py` → script to generate synthetic flower data.  
+  - `houses.csv` → sample dataset of house features.  
+  - `houses_generate.py` → script to generate synthetic house data.
+
+- **`models/`**  
+  Directory for saved models, scalers, and metadata.
+
+- **`scratchnet/`**  
+  Core implementation of the ScratchNet framework.  
+  - `__init__.py` → initializes the package.  
+  - `datasets.py` → dataset loaders and preprocessing.  
+  - `layers.py` → core layer definitions (e.g., Dense).  
+  - `losses.py` → loss functions (CrossEntropy, MSE).  
+  - `model.py` → main MLP architecture.  
+  - `optimizers.py` → optimizers (SGD, Adam).  
+  - `trainer.py` → training logic and early stopping.  
+  - `utils.py` → utility functions (one-hot encoding, accuracy).
 
 ---
 
