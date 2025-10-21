@@ -58,17 +58,17 @@ ScratchNet/
 
 ## ⚙️ Installation
 
-You only need Python ≥ 3.8 and a few dependencies:
-
-```bash
-pip install -r "requirements.txt"
-```
-
-Then clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/maxencedbe/scratchnet.git
 cd ScratchNet
+```
+
+Then:
+
+```bash
+pip install -r "requirements.txt"
 ```
 
 ---
@@ -83,7 +83,7 @@ python train.py
 
 You’ll be prompted to:
 
-- Choose a dataset (e.g., mnist, iris, or custom for your CSV)
+- Choose a dataset (e.g., mnist, iris, or custom for your own CSV)
 - Configure the model manually or let ScratchNet auto-tune hyperparameters
 - Confirm before training start
 
@@ -97,20 +97,35 @@ Select a dataset:
   4. wine
   5. mnist
   6. custom
-👉 Choice (1/2/3/4/5/6): 3
+Choice (1/2/3/4/5/6): 3
 Dataset selected: iris
 
+Loading dataset 'iris'...
+Dataset ready for training.
+
 Model configuration:
-  Hidden layers: [64, 32]
-  Activation: relu
-  Optimizer: adam
-  Learning rate: 0.01
-  Epochs: 50
-  Batch size: 32
+Do you want to configure the model manually? (y/n) [n]: n
+
+Please review your configuration before training:
+   • Dataset: iris
+   • Task type: Classification
+   • Loss: cross_entropy
+   • Optimizer: adam
+   • Learning rate: 0.01
+   • Epochs: 200
+   • Batch size: 8
+   • Hidden layers: [32, 16]
 
 Start training? (y/n): y
+
 ...
-Training complete. Best model saved in `models/iris_model.pkl`.
+Best model restored with lowest loss: 0.024720
+
+Save this model? (y/n) [y]:
+Model saved at models/iris_model.pkl
+
+Training completed successfully.
+
 ```
 
 --- 
