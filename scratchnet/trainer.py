@@ -124,7 +124,6 @@ class Trainer:
                 "optimizer_name": self.optimizer_name,
                 "lr": self.lr
             }, f)
-        print(f"Model saved at {path}")
 
     # ============================================================
     # Load model
