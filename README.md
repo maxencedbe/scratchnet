@@ -28,47 +28,54 @@ It includes a clean modular design with dataset management, model training (incl
 
 ## 🧩 Project Structure
 
-ScratchNet/
-│
-├── train.py # Main training script (CLI)
-├── predict.py # Prediction script (CLI)
-├── README.md # Project documentation
-├── requirements.txt # Dependencies
-│
-├── custom_datasets/ # Custom CSV datasets and generators
-│ ├── flowers.csv
-│ ├── flowers_generate.py
-│ ├── houses.csv
-│ └── houses_generate.py
-│
-├── models/ # Saved models, scalers, and metadata
-│
-├── scratchnet/ # Core implementation
-│   ├── init.py
-│   ├── datasets.py # Dataset loaders and preprocessing
-│   ├── layers.py # Core layer definitions (Dense, etc.)
-│   ├── losses.py # Loss functions (CrossEntropy, MSE)
-│   ├── model.py # MLP architecture
-│   ├── optimizers.py # Optimizers (SGD, Adam)
-│   ├── trainer.py # Training logic + early stopping
-│   └── utils.py # Utilities (one-hot encoding, accuracy)
-└
+- **`train.py`**  
+  Main training script (CLI).
+
+- **`predict.py`**  
+  Prediction script (CLI).
+
+- **`README.md`**  
+  Project documentation.
+
+- **`requirements.txt`**  
+  List of Python dependencies.
+
+- **`custom_datasets/`**  
+  Contains custom CSV datasets and their generation scripts.  
+  - `flowers.csv` → sample dataset of flower features.  
+  - `flowers_generate.py` → script to generate synthetic flower data.  
+  - `houses.csv` → sample dataset of house features.  
+  - `houses_generate.py` → script to generate synthetic house data.
+
+- **`models/`**  
+  Directory for saved models, scalers, and metadata.
+
+- **`scratchnet/`**  
+  Core implementation of the ScratchNet framework.  
+  - `__init__.py` → initializes the package.  
+  - `datasets.py` → dataset loaders and preprocessing.  
+  - `layers.py` → core layer definitions (e.g., Dense).  
+  - `losses.py` → loss functions (CrossEntropy, MSE).  
+  - `model.py` → main MLP architecture.  
+  - `optimizers.py` → optimizers (SGD, Adam).  
+  - `trainer.py` → training logic and early stopping.  
+  - `utils.py` → utility functions (one-hot encoding, accuracy).
 
 ---
 
 ## ⚙️ Installation
 
-You only need Python ≥ 3.8 and a few dependencies:
-
-```bash
-pip install -r "requirements.txt"
-```
-
-Then clone the repository:
+Clone the repository:
 
 ```bash
 git clone https://github.com/maxencedbe/scratchnet.git
 cd ScratchNet
+```
+
+Then:
+
+```bash
+pip install -r "requirements.txt"
 ```
 
 ---
@@ -83,7 +90,7 @@ python train.py
 
 You’ll be prompted to:
 
-- Choose a dataset (e.g., mnist, iris, or custom for your CSV)
+- Choose a dataset (e.g., mnist, iris, or custom for your own CSV)
 - Configure the model manually or let ScratchNet auto-tune hyperparameters
 - Confirm before training start
 
@@ -97,20 +104,35 @@ Select a dataset:
   4. wine
   5. mnist
   6. custom
-👉 Choice (1/2/3/4/5/6): 3
+Choice (1/2/3/4/5/6): 3
 Dataset selected: iris
 
+Loading dataset 'iris'...
+Dataset ready for training.
+
 Model configuration:
-  Hidden layers: [64, 32]
-  Activation: relu
-  Optimizer: adam
-  Learning rate: 0.01
-  Epochs: 50
-  Batch size: 32
+Do you want to configure the model manually? (y/n) [n]: n
+
+Please review your configuration before training:
+   • Dataset: iris
+   • Task type: Classification
+   • Loss: cross_entropy
+   • Optimizer: adam
+   • Learning rate: 0.01
+   • Epochs: 200
+   • Batch size: 8
+   • Hidden layers: [32, 16]
 
 Start training? (y/n): y
+
 ...
-Training complete. Best model saved in `models/iris_model.pkl`.
+Best model restored with lowest loss: 0.024720
+
+Save this model? (y/n) [y]:
+Model saved at models/iris_model.pkl
+
+Training completed successfully.
+
 ```
 
 --- 
