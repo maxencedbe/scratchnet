@@ -43,16 +43,15 @@ ScratchNet/
 │
 ├── models/ # Saved models, scalers, and metadata
 │
-├── scratchnet/ # Core implementation
-│   ├── init.py
-│   ├── datasets.py # Dataset loaders and preprocessing
-│   ├── layers.py # Core layer definitions (Dense, etc.)
-│   ├── losses.py # Loss functions (CrossEntropy, MSE)
-│   ├── model.py # MLP architecture
-│   ├── optimizers.py # Optimizers (SGD, Adam)
-│   ├── trainer.py # Training logic + early stopping
-│   └── utils.py # Utilities (one-hot encoding, accuracy)
-└
+└── scratchnet/ # Core implementation
+├── init.py
+├── datasets.py # Dataset loaders and preprocessing
+├── layers.py # Core layer definitions (Dense, etc.)
+├── losses.py # Loss functions (CrossEntropy, MSE)
+├── model.py # MLP architecture
+├── optimizers.py # Optimizers (SGD, Adam)
+├── trainer.py # Training logic + early stopping
+└── utils.py # Utilities (one-hot encoding, accuracy)
 
 ---
 
